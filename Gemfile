@@ -30,6 +30,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'newrelic_rpm'
 gem 'jquery-rails'
+gem 'haml'
 # ----
 
 
