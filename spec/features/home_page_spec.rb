@@ -7,7 +7,7 @@ describe 'A user who visits the app' do
             visit '/'
 
             within ".nav" do
-                expect(page).to have_content("logo")
+                expect(page).to have_css("img[class='logo-image']")
             end
         end
     end

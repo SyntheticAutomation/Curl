@@ -13,29 +13,17 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# ----
-# Gems I added after `rails new`
-gem 'rspec-rails'
-gem 'shoulda-matchers'
-gem 'bcrypt'
-gem 'factory_bot_rails'
-gem 'vcr'
-gem 'webmock'
-gem 'faker'
-gem 'launchy'
-gem 'pry'
-gem 'simplecov'
-gem 'yarn'
-gem 'figaro'
-gem 'faraday'
-gem 'newrelic_rpm'
-gem 'jquery-rails'
-gem 'haml'
-# ----
 
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'haml'
+  gem 'faker'
+  gem 'pry'
+  gem 'figaro'
+  gem 'bcrypt'
+  gem 'faraday'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -43,9 +31,21 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-rspec'
+  # ----
+  # Gems I added after `rails new`
+  gem 'newrelic_rpm'
+  gem 'jquery-rails'
+  # ----
 end
 
 group :test do
+  gem 'simplecov'
+  gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'launchy'
+  gem 'webmock'
+  gem 'rspec-rails'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
