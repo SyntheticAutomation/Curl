@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; 
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  color: rgb(70, 70, 70);
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, .8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+  
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: rgb(77, 77, 77);
+      position: absolute;
+      top: 1rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+      color: black;
+    }
+  }
+  
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgba(black, .2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+  }
+  
+  &__left {
+    width: 33.333333333%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  &__right {
+    width: 66.66666666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+  
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+
+  input {
+    outline: none;
+    border-radius: 3px;
+  }
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    
+    border: none;
+    cursor: pointer;
+    color: rgb(70, 70, 70);
+  }
+  
+  &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(black,.2);
+
+      &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+      }
+  }
+  
+  &:active,
+  &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(black,.2);
+  }
+  &--login {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 13rem;
+    
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+.heading__login {
+  font-size: 5rem;
+  transform: translateY(2rem);
+}
+
+.field__login {
+  &--password,
+  &--username {
+    padding: 2rem;
+  }
+}
+
+.label {
+  padding-right: 2rem;
+}

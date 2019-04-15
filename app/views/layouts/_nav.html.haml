@@ -1,3 +1,43 @@
 .nav
-  .logo
-    = link_to image_tag("logo.png", class: 'logo-image'), root_path
+  .nav-left
+    .logo
+      = link_to image_tag("logo.png", class: 'logo-image'), root_path, class: 'link__logo', title: 'Home'
+  .nav-right
+    - unless current_user
+      = link_to("Login", '#popup__login', html_options = {class: "link__login"})
+      = link_to("Sign Up", html_options = {class: "link__register"}, {href: "#popup__signup"})
+    - else
+      = link_to("Log Out", logout_path, html_options = {class: "link__logout"})
+      = link_to("History", history_index_path, html_options = {class: "link__history"})
+  .popup.popup__login#popup__login
+    .popup__content
+      .popup__left
+        = image_tag("headphones.jpg", alt: "dog", class: "popup__img")
+        = image_tag("snuggle-dog.jpg", alt: "lock", class: "popup__img")
+      .popup__right
+        %h2.heading__login Welcome back.
+        %p.popup__text 
+          = form_tag(login_path, id: 'login__form') do
+            .field__login--username
+              = label_tag :username, nil, class: 'label'
+              = text_field_tag "username", nil, class: 'login__username-field'
+            .field__login--password
+              = label_tag :password, nil, class: 'label'
+              = password_field_tag "password", nil, class: 'login__password-field'
+          %a.btn.btn--login{href: login_path} Login
+      %a.popup__close{href: "#section-home"} &times;
+  -# .popup.popup__signup#popup__signup
+  -#   .popup__content
+  -#     %a.popup__close{href: "#section-home"} &times;
+  -#     %h2.heading__login Register for a free account!
+  
+
+
+-#   <div class="form-group">
+-#     <%= label_tag :user_password %>
+-#     <%= password_field_tag :user_password, nil, class: 'form-control' %>
+-#   </div>
+-#   <%= submit_tag "Log In" %>
+-# <% end %>
+
+            
