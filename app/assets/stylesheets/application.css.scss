@@ -89,6 +89,8 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    text-align: center;
+
   }
   
   &__img {
@@ -143,26 +145,57 @@ body {
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: bold;
-    margin-left: 13rem;
     
     &::after {
       background-color: white;
     }
   }
+
+  &--signup {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 30px;
+    border: 25%;
+    transition: all .2s;
+    position: relative;
+    
+    border: none;
+    cursor: pointer;
+    color: rgb(70, 70, 70);
+  }
 }
 
-.heading__login {
+.heading__popup {
   font-size: 5rem;
   transform: translateY(2rem);
 }
 
-.field__login {
-  &--password,
-  &--username {
-    padding: 2rem;
+.field {
+  &__login {
+
+    &--password,
+    &--username {
+      padding: 2rem;
+    }
+  }
+
+  &__signup {
+
+    &--username,
+    &--password,
+    &--confirm_password {
+      padding: 1rem;
+    }
   }
 }
 
 .label {
   padding-right: 2rem;
+}
+
+#create-account-button {
+  border-radius: 30px;
 }

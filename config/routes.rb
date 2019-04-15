@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get '/history', to: 'searches#index'
 
+  resources :users, only: [:create]
+
 end

@@ -1,0 +1,22 @@
+-# Registration Popup
+.popup.popup__signup#popup__signup
+  .popup__content
+    .popup__left
+      = image_tag("book.jpg", alt: "book", class: "popup__img")
+      = image_tag("lock.jpg", alt: "lock", class: "popup__img")
+    .popup__right.popup__right--signup
+      %h2.heading__popup Access your previous searches with an account.
+      %p.popup__text
+        = form_for @user do |f|
+          .field__signup--username
+            = f.label :username, nil, class: 'label'
+            = f.text_field :username, class: 'signup__username-field', required: true
+          .field__signup--password
+            = f.label :password, nil, class: 'label'
+            = f.password_field :password, class: 'signup__password-field', required: true
+          .field__signup--confirm_password
+            = f.label :confirm_password, nil, class: 'label'
+            = f.password_field :confirm_password, class: 'signup__password-field', required: true
+
+          = f.submit 'Create Account', class: 'btn btn--signup', id: 'create-account-button'
+    %a.popup__close{href: "#section-home"} &times;

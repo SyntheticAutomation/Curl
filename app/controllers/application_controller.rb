@@ -8,5 +8,4 @@ class ApplicationController < ActionController::Base
             redirect_to logout_path
         end
     end
-
 end
