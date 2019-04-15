@@ -5,7 +5,7 @@
   .nav-right
     - unless current_user
       = link_to("Login", '#popup__login', html_options = {class: "link__login"})
-      = link_to("Sign Up", html_options = {class: "link__register"}, {href: "#popup__signup"})
+      = link_to("Sign Up", '#popup__signup', html_options = {class: "link__signup"})
     - else
       = link_to("Log Out", logout_path, html_options = {class: "link__logout"})
       = link_to("History", history_index_path, html_options = {class: "link__history"})

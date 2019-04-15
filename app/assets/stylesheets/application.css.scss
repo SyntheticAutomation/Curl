@@ -29,6 +29,36 @@ body {
   color: rgb(70, 70, 70);
 }
 
+.nav {
+
+  &-left {
+    float: left;
+    .logo-image {
+      width: 50%;
+    }
+  }
+
+  &-right {
+    float: right;
+    margin-top: 1.5rem;
+    .link {
+      &__login,
+      &__history,
+      &__logout,
+      &__signup {
+        text-decoration: none;
+        color: rgb(70, 70, 70);
+        font-size: 1.5rem;
+        margin-right: 10rem;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
 .popup {
   height: 100vh;
   width: 100%;
