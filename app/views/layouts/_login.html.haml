@@ -1,0 +1,18 @@
+-# Login Popup
+.popup.popup__login#popup__login
+  .popup__content
+    .popup__left
+      = image_tag("headphones.jpg", alt: "headphones", class: "popup__img")
+      = image_tag("snuggle-dog.jpg", alt: "dog", class: "popup__img")
+    .popup__right
+      %h2.heading__popup Welcome back.
+      %p.popup__text 
+        = form_tag(login_path, id: 'login__form') do
+          .field__login--username
+            = label_tag :username, nil, class: 'label'
+            = text_field_tag "username", nil, class: 'login__username-field'
+          .field__login--password
+            = label_tag :password, nil, class: 'label'
+            = password_field_tag "password", nil, class: 'login__password-field'
+        %a.btn.btn--login{href: login_path} Login
+    %a.popup__close{href: "#section-home"} &times;
