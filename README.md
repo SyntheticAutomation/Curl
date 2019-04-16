@@ -1,24 +1,26 @@
-# README
+# Curl
+Deployed at: https://obscure-dusk-30171.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Preview
+!["Home Page"](/home.png "Dashboard")
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+To access this repository locally, clone the repository by entering this in your shell:
 
-* System dependencies
+`git@github.com:SyntheticAutomation/Curl.git`
 
-* Configuration
+## How to Use
 
-* Database creation
+This app allows you to type in any media and it will give you a list of recommendations based on what you typed. It uses the TasteDive API to retrieve these recommendations.
 
-* Database initialization
+## Project Management
+Agile Board: https://trello.com/b/qDw0qS6m/curl
 
-* How to run the test suite
+## Tools & Technologies
+- Ruby on Rails
+- HTML5
+- CSS3
+- Sass/SCSS
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
