@@ -32,11 +32,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec'
-  # ----
-  # Gems I added after `rails new`
-  gem 'newrelic_rpm'
-  gem 'jquery-rails'
-  # ----
 end
 
 group :test do

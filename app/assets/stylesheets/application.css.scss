@@ -173,10 +173,12 @@ body {
       transform: translateY(-1px);
       box-shadow: 0 .5rem 1rem rgba(black,.2);
   }
-  &--login {
+
+  &__login {
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: bold;
+    
     
     &::after {
       background-color: white;
