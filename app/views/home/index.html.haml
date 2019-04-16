@@ -5,6 +5,22 @@
     %meta(http-equiv="X-UA-Compatible" content="ie=edge")/
     %title Home
   %body
-    = render './layouts/nav'
     #section-home
-      .header Curl up next to the fire with your favorite entertainment. Whether you like to read, listen, or watch, we've got you covered.
+      #section-search
+        .bg-video
+          %video.bg-video__content{autoplay: true, muted: true, loop: true}
+            %source{src: 'https://bit.ly/2V4ogpl', type: 'video/mp4'}
+        .header
+          .header__content
+            Curl up next to the fire with your favorite entertainment.
+          .header__description 
+            Curl retrieves recommendations based on your taste preferences.
+            Simply enter a product in the search bar and watch the magic happen.
+        .search-bar
+        - unless current_user #if user isn't logged in, basic search that calls API service.
+          %input.search-field{type: 'text', placeholder: 'Enter a song, artist, book, podcast, movie, TV show, or author...'}
+          %input.search-submit{type: 'submit', value: 'Search'}
+        -# if user is logged in, does the api call and displays results, 
+        -# however user input and timestamps are saved to the database 
+        -# and available to view on the history index page in a grid.
+      .section-results
