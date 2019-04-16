@@ -10,6 +10,10 @@ To access this repository locally, clone the repository by entering this in your
 
 `git@github.com:SyntheticAutomation/Curl.git`
 
+Then install the libraries:
+
+`sudo bundle`
+
 ## How to Use
 
 This app allows you to type in any media and it will give you a list of recommendations based on what you typed. It uses the TasteDive API to retrieve these recommendations.
