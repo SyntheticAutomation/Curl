@@ -11,13 +11,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      if unique_username?(new_username) == false
-        flash[:notice] = "Error: username already exists"
-      elsif secure_password?(new_password) == false
-        flash[:notice] = "Error: password must be more than 7 characters"
-      elsif password_fields_match?(new_password, password_confirmation) == false
-        flash[:notice] = "Error: password fields do not match"
-      end
+      flash[:notice] = "Error: username already exists" if unique_username?(new_username) == false
+      flash[:notice] = "Error: password must be more than 7 characters" if secure_password?(new_password) == false
+      flash[:notice] = "Error: password fields do not match" if password_fields_match?(new_password, password_confirmation) == false
       redirect_to root_path
     end
   end
@@ -43,12 +39,4 @@ class UsersController < ApplicationController
   def valid_request?(name, pass1, pass2)
     secure_password?(pass1) && unique_username?(name) && password_fields_match?(pass1, pass2)
   end
-
-
-  # what does a user need to validate their account upon creation?
-  # /-password over 7 chars
-  # /-username cannot exist in db already
-  # -fields cannot be blank
-  # -password and confirm_password fields must be equal
-
 end

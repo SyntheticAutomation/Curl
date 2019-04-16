@@ -23,6 +23,7 @@ group :development, :test do
   gem 'bcrypt'
   gem 'faraday'
   gem 'factory_bot_rails'
+  gem 'faraday_middleware'
 end
 
 group :development do
