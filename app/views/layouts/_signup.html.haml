@@ -17,6 +17,5 @@
           .field__signup--confirm_password
             = f.label :confirm_password, nil, class: 'label'
             = f.password_field :confirm_password, class: 'signup__password-field', required: true
-
-          = f.submit 'Create Account', class: 'btn btn--signup', id: 'create-account-button'
+          = f.submit 'Create Account', class: 'btn btn--signup', id: 'create-account-button', title: "Create Account"
     %a.popup__close{href: "#section-home"} &times;

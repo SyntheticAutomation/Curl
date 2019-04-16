@@ -2,13 +2,17 @@
   .nav-left
     .logo
       = link_to image_tag("logo.png", class: 'logo-image'), root_path, class: 'link__logo', title: 'Home'
+      - if current_user 
+        .message__login
+          %p.message__login--text 
+            = "Logged in as #{current_user.username}"
   .nav-right
     - unless current_user
-      = link_to("Login", '#popup__login', html_options = {class: "link__login"})
-      = link_to("Sign Up", '#popup__signup', html_options = {class: "link__signup"})
+      = link_to("Login", '#popup__login', html_options = {class: "link__login", title: "Login"})
+      = link_to("Sign Up", '#popup__signup', html_options = {class: "link__signup", title: "Signup"})
     - else
-      = link_to("Log Out", logout_path, html_options = {class: "link__logout"})
-      = link_to("History", history_index_path, html_options = {class: "link__history"})
+      = link_to("History", history_path, html_options = {class: "link__history", title: "History"})
+      = link_to("Log Out", logout_path, html_options = {class: "link__logout", title: "Logout"})
 
   = render './layouts/login'
   = render './layouts/signup'
