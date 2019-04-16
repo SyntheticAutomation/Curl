@@ -8,19 +8,27 @@
     #section-home
       #section-search
         .bg-video
-          %video.bg-video__content{autoplay: true, muted: true, loop: true}
-            %source{src: 'https://bit.ly/2V4ogpl', type: 'video/mp4'}
+          = video_tag "fireplace.mp4", autoplay: true, loop: true, muted: true, class: "bg-video__content", type: "video/mp4"
         .header
           .header__content
             Curl up next to the fire with your favorite entertainment.
           .header__description 
             Curl retrieves recommendations based on your taste preferences.
             Simply enter a product in the search bar and watch the magic happen.
-        .search-bar
-        - unless current_user #if user isn't logged in, basic search that calls API service.
-          %input.search-field{type: 'text', placeholder: 'Enter a song, artist, book, podcast, movie, TV show, or author...'}
-          %input.search-submit{type: 'submit', value: 'Search'}
+          = form_tag(root_path, method: :get) do
+            = text_field_tag(:search, params[:search], {class: "search-field", placeholder: 'Enter a song, artist, book, podcast, movie, TV show, or author...'})
+            = submit_tag("Search", class: 'search-submit')
+        -# future iteration:
         -# if user is logged in, does the api call and displays results, 
         -# however user input and timestamps are saved to the database 
         -# and available to view on the history index page in a grid.
       .section-results
+        - if @query
+          .header__results Search Results
+          .section-results__grid
+            - @recommendations.each do |r|
+              .card__recommendation
+                .card__title
+                  = r[:Name]
+                .card__media_type
+                  = r[:Type]
